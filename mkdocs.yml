@@ -18,6 +18,8 @@ theme:
         name: Switch to light mode
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - pymdownx.highlight:
       linenums: None
   - pymdownx.inlinehilite

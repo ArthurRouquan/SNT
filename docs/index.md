@@ -3,7 +3,7 @@
 Cours, exercices et autres ressources pour mes élèves en classe de SNT au lycée André Theuriet à Civray.
 
 ## Liens utiles
-* [Programme en vigueur de SNI](https://eduscol.education.fr/document/23494/download)
+* [Programme en vigueur de SNT](https://eduscol.education.fr/document/23494/download)
 
 <!-- ``` py hl_lines="2 3" linenums="1"
 import tensorflow as tf
