@@ -26,4 +26,4 @@
 
     6. Convertir le document en PDF sous le même nom (avec l'extension `.pdf` plutôt que `.odt` bien entendu). Passez pour cela soit par le menu Fichier puis Exporter vers et enfin Exporter en PDF, soit en cliquant sur l'îcone correspondante.
 
-    7. Sur un navigateur web (Firefox ou Edge),  connectez-vous sur Google Classroom avec votre adresse du lycée et accéder au cours SNT grâce au code `nuyvmkj`. Déposer dans l'onglet "Travaux et devoir" le magnifique PDF que vous avez crée.
+    7. Sur un navigateur web (Firefox ou Edge),  connectez-vous sur Google Classroom avec votre adresse du lycée et accéder au cours SNT grâce au code fourni. Déposer dans l'onglet "Travaux et devoir" le magnifique PDF que vous avez crée.
