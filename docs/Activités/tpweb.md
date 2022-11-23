@@ -109,30 +109,28 @@ Par exemple, si l'on veut écrire un paragraphe :
 
 Pour comprendre l'interêt de l'élément `#!html <p>`, affichez ces deux pages Web :
 
-    ```html
-    <html>
-        <body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+```html
+<html>
+    <body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </body>
-    </html>
-    ```
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </body>
+</html>
+```
 
-    ```html
-    <html>
-        <body>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+```html
+<html>
+    <body>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </body>
-    </html>
-    ```
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </body>
+</html>
+```
 
-    !!! info "Et le doctype et l'élément head !?"
-        Ils ne sont pas strictement obligatoires, on peut donc les omettre pour tester rapidement du code. Vous pouvez tout à fait les conserver !
-
-1. Quelle est la différence notable ?
+!!! info "Et le doctype et l'élément head !?"
+    Ils ne sont pas strictement obligatoires, on peut donc les omettre pour tester rapidement du code. Vous pouvez tout à fait les conserver !
 
 !!! Example "Questions"
     1. Quelle est la différence notable ?
@@ -359,4 +357,4 @@ La page de votre recette doit avoir le contenu suivant
 
 ### Itération 5 : M'envoyer le site
 
-Compresser le dossier `mes_recettes` et me l'envoyer sur le Google Classroom !
+Compresser le dossier `mes_recettes` et me l'envoyer sur Google Classroom !
