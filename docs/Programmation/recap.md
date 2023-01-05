@@ -1,5 +1,7 @@
 # Feuille de Triche
 
+[Diaporama](prog.pdf)
+
 ## Types et Valeurs
 
 Un programme manipule des données, plus précisement des **valeurs**. On distingue
