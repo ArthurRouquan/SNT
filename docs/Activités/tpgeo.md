@@ -41,7 +41,7 @@ S'il est facile de localiser un point dans le plan grâce à un repère cartési
 
     * C : `45° 15' 23" N, 5° 01' 43" E`
 
-    * D : `$GPGGA,114535.288,7814.1500,S,01529.4833,E,1,04,3.2,325,M,,,,0000*0E`
+    * D : `$GPGGA,114535.288,7814.1500,N,01529.4833,E,1,04,3.2,325,M,,,,0000*0E`
 
     Aidez Alice grâce aux différentes aides ! Les questions se situent après.
 
