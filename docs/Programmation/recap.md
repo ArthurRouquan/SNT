@@ -29,7 +29,7 @@ str(3.14)  # float ► str, renvoie "3.14"
 
 ## Variables
 
-Une variable permet de **stocker** une valeur.
+Une variable permet de **stocker** une valeur de n'importe quel type.
 
 ### Affectation
 
@@ -41,7 +41,7 @@ On parle d'**initialisation** lors de la première affectation.
 
 ### Réutilisation
 
-Le contenue d'une variable peut être réutilisé :
+Le contenu d'une variable peut être réutilisé dans des calculs :
 
 ```py
 x = 42
@@ -75,7 +75,7 @@ resultat = 10 - 2 * 3
 
 ### Entre d'autres types
 
-Les opérateurs arithmétques ont un sens différent suivant le type de valeurs manipulées.
+Les opérateurs arithmétiques ont un sens différent suivant le type de valeurs manipulées.
 Par exemple, on peut utiliser des chaînes de caractères :
 
 ```py
@@ -83,7 +83,7 @@ Par exemple, on peut utiliser des chaînes de caractères :
 "Oui" * 3  # renvoie "OuiOuiOui"
 ```
 
-
+C'est tout l'intérêt d'avoir différents types, la machine les traite différement.
 
 ## Entrée / Sortie
 
@@ -152,7 +152,7 @@ Quelques exemples :
 ### Structure conditionnelle `#!python if` (si)
 
 <figure markdown>
-![Titre](diagrams/if.svg){ display=block, width="350px"}
+![Titre](diagrams/if.png){ display=block, width="350px"}
 </figure>
 
 La clause `#!python if` (si) permet d'exécuter un bloc d'instructions (code identé) si la condition est évaluée à `#!python True`.
@@ -166,7 +166,7 @@ if age >= 18:
 ### Structure conditionnelle `#!python if else` (si, sinon)
 
 <figure markdown>
-  ![](diagrams/ifelse.svg){ width="350px" }
+  ![](diagrams/else.png){ width="350px" }
 </figure>
 
 La clause `#!python else` (sinon) permet de spécifier en plus un bloc d'instructions à exécuter si la condition est évaluée à `#!python False`. 
@@ -184,7 +184,7 @@ else:
 ### Structure conditionnelle `#!python if elif else` (si, sinon si, sinon)
 
 <figure markdown>
-  ![](diagrams/ifelifelse.svg){ width="350px" }
+  ![](diagrams/elif.png){ width="350px" }
 </figure>
 
 La clause `#!python elif` (else if, sinon si) permet de gérer plusieurs conditions. Si une condition n'est pas validée, la suivante est étudiée. Une telle structure conditionnelle peut contenir une ou plusieurs clauses `#!python elif`.
@@ -204,6 +204,40 @@ else:
 
 ## Boucles
 
+Une boucle permet de **répéter** un bloc d'instructions.
+
 ### Boucle bornée `#!python for` (pour)
 
+Lorsque le nombre de répétitions est connu, la boucle `#!python for` qui permet de parcourir une séquence. On génère une séquence de nombres entiers grâce la fonction `#!python range`.
+
+<figure markdown>
+  ![](diagrams/forrange.png){ width="700px" }
+</figure>
+
+
+
+<figure markdown>
+  ![](diagrams/for.png)
+</figure>
+
 ### Boucle non-bornée `#!python while` (tant que)
+
+Lorsque le nombre de répétitions n'est pas connu à l'avance, la boucle `#!python while` permet de répéter un bloc d'instructions tant qu'une condition est vérifiée.
+
+
+<figure markdown>
+  ![](diagrams/while2.png){ width="350px" }
+</figure>
+
+<figure markdown>
+  ![](diagrams/while.png){ width="440px"  }
+</figure>
+
+
+## Fonctions
+
+Une fonction est une portion de code qui effectue une tâche spécifique et qui peut être appelée à plusieurs endroits dans un programme. 
+
+<figure markdown>
+  ![](diagrams/func.png)
+</figure>
