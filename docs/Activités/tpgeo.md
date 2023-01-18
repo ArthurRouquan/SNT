@@ -1,4 +1,4 @@
-# TP Introduction à la Géolocalisation
+# TP Les coordonnées géographiques
 
 !!! warning "Consignes"
     Un document réponse doit être téléversé au format PDF sur le Classroom à la fin de la séance ! Le document peut être réalisé sur LibreOffice, Google Docs etc. je vous laisse maître de vos outils.
