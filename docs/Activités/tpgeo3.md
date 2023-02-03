@@ -58,9 +58,9 @@ Lucie habite à **Bordeaux** près de la **place du Parlement**. Elle propose à
 
 * Tu me rejoins chez moi et nous partirons en voiture et nous roulerons jusqu’au **parking du Pont d’Espagne (Cauterets**).
 
-* Notre randonnée démarrera à cet endroit et nous marcherons jusqu’à **la Cabane du Pinet** en passant par **le Lac de Gaube**.
+* Notre randonnée démarrera à cet endroit et nous marcherons jusqu’à **la Refuge des Oulettes de Gaube** en passant par **le Lac de Gaube**.
 
-* Nous passerons la nuit au refuge de la Cabane du Pinet et reviendrons le lendemain.
+* Nous passerons la nuit au refuge de la Refuge des Oulettes de Gaube et reviendrons le lendemain.
 
 !!! example "Question 6" 
     Utiliser l’outil *"Calculer un itinéraire"* de Géoportail pour calculer le temps de route en voiture pour se rendre au départ de la randonnée.
@@ -140,7 +140,7 @@ Chercher *Pont d’Espagne* puis sélectionner la première réponse (voie de se
     Après avoir cliqué sur cette attribut, indiquer le nombre de valeurs qu’il peut prendre, c’est-à-dire le nombre de types de ponts, puis en citer trois :
 
 !!! example "Question 21"
-    Utiliser les possibilités d’itinéraire d’OSM pour obtenir les caractéristiques de la randonnée partant du Pont d’Espagne vers la Cabane du Pinet :
+    Utiliser les possibilités d’itinéraire d’OSM pour obtenir les caractéristiques de la randonnée partant du Pont d’Espagne vers la Refuge des Oulettes de Gaube :
     
     * distance
     
