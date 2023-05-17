@@ -356,7 +356,7 @@ void loop()
 
 ### :material-signal-variant: Mini-Projet B : Radar de recul
 !!! success "Objectif"
-    Les voitures modernes sont dotés d'un radar de recul permettant d'aider le conducteur à détecter des obstacles proches lorsqu'il est en marche arrière. Un tel radar est doté d'un **capteur de distance**. Le but de ce projet est de réaliser un tel radar de recul.
+    Les voitures modernes sont dotées d'un radar de recul permettant d'aider le conducteur à détecter des obstacles proches lorsqu'il est en marche arrière. Un tel radar est doté d'un **capteur de distance**. Le but de ce projet est de réaliser un tel radar de recul.
 
 
 ??? note "Capteur de distance à ultrasons"
