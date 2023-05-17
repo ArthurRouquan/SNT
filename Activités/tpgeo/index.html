@@ -1,0 +1,798 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tp0/">
+      
+      
+        <link rel="next" href="../tpgeo2/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+    
+    
+      
+        <title>TP Les coordonnées géographiques - SNT</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp-les-coordonnees-geographiques" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="SNT" class="md-header__button md-logo" aria-label="SNT" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SNT
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP Les coordonnées géographiques
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SNT" class="md-nav__button md-logo" aria-label="SNT" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SNT
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Activités
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Activités
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp0/" class="md-nav__link">
+        TP Zéro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP Les coordonnées géographiques
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP Les coordonnées géographiques
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    Définitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Définitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cartographie" class="md-nav__link">
+    Cartographie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geolocalisation" class="md-nav__link">
+    Géolocalisation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#se-reperer-sur-terre" class="md-nav__link">
+    Se repérer sur Terre
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latitude-et-longitude" class="md-nav__link">
+    Latitude et Longitude
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesurer-les-angles" class="md-nav__link">
+    Mesurer les angles
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesurer les angles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocole-nmea" class="md-nav__link">
+    Protocole NMEA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    Questions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpgeo2/" class="md-nav__link">
+        TP Les systèmes de positionnement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpgeo3/" class="md-nav__link">
+        TP Les plateformes de cartographie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpweb/" class="md-nav__link">
+        TP Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpzarduino/" class="md-nav__link">
+        TP Arduino - Informatique embarquée
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Programmation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Programmation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/recap/" class="md-nav__link">
+        Feuille de Triche
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    Définitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Définitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cartographie" class="md-nav__link">
+    Cartographie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geolocalisation" class="md-nav__link">
+    Géolocalisation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#se-reperer-sur-terre" class="md-nav__link">
+    Se repérer sur Terre
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latitude-et-longitude" class="md-nav__link">
+    Latitude et Longitude
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesurer-les-angles" class="md-nav__link">
+    Mesurer les angles
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesurer les angles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocole-nmea" class="md-nav__link">
+    Protocole NMEA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    Questions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="tp-les-coordonnees-geographiques">TP Les coordonnées géographiques</h1>
+<div class="admonition warning">
+<p class="admonition-title">Consignes</p>
+<p>Un document réponse doit être téléversé au format PDF sur le Classroom à la fin de la séance ! Le document peut être réalisé sur LibreOffice, Google Docs etc. je vous laisse maître de vos outils.</p>
+</div>
+<h2 id="definitions">Définitions</h2>
+<h3 id="cartographie">Cartographie</h3>
+<div class="admonition note cartographie">
+<p class="admonition-title">Note</p>
+<p>La <strong>cartographie</strong> est l'étude et la réalisation de cartes. Cela inclut la collecte de données sur un lieu, la représentation de ces données sur une carte, et l'utilisation de ces cartes pour aider à comprendre et à naviguer dans un endroit.</p>
+</div>
+<p>La <strong>cartographie</strong> est essentielle pour beaucoup d'activités, comme le transport, l'agriculture, l'urbanisme, les loisirs, l'épidémiologie ou encore la guerre. Elle a été révolutionné et popularisé par les <strong>cartes numériques</strong> accessibles depuis les ordinateurs, tablettes ou téléphones, en étant plus intuitives à utiliser que les cartes papier. Ces dernières ont été systématiquement numérisées à la fin du 20e siècle.</p>
+<p>Les cartes numériques rassemblent toutes les échelles et permettent de montrer différents 
+aspects de la région visualisée sur une seule carte. Les <strong>algorithmes de recherche</strong> permettent de retrouver sur la carte les endroits en donnant simplement leur nom, et de calculer des itinéraires entre points selon des modes de transports variés.</p>
+<h3 id="geolocalisation">Géolocalisation</h3>
+<div class="admonition note">
+<p class="admonition-title">Géolocalisation</p>
+<p>La géolocalisation est le processus de déterminer la <strong>position géographique</strong> d'un objet ou d'une personne sur la Terre.</p>
+</div>
+<p>Le principal instrument de localisation, GPS (<em>Global Positioning System</em>), a été conçu par 
+l’armée américaine dans les années soixante. Le premier satellite GPS fut lancé en 1978. Il y 
+en a actuellement une trentaine, de sorte qu’à tout moment quatre à six satellites au moins 
+sont visibles depuis tout point de la Terre. Couplé aux cartes numériques, le système GPS 
+permet de se situer. Il n’est pas toujours efficace en ville, et peut être complété par d’autres 
+moyens de localisation comme la détection de bornes Wi-Fi proches. D’autres systèmes plus 
+précis, dont Galileo, sont en cours de déploiement.</p>
+<h2 id="se-reperer-sur-terre">Se repérer sur Terre</h2>
+<p>S'il est facile de localiser un point dans le plan grâce à un repère cartésien, malheureusement, la Terre n'est pas une surface plane. Comment alors situer un point sur une sphère ?</p>
+<div class="admonition example">
+<p class="admonition-title">Petit jeu d'énigmes</p>
+<p>Alice participe à jeu d'énigmes sur le Web et doit retrouver 4 sites et les placer sur un planisphère. Les indices à sa disposition sont :</p>
+<ul>
+<li>
+<p>A : <code>33° 51' 25" S, 151° 12' 55" E</code></p>
+</li>
+<li>
+<p>B : <code>-25.694171, -54.436646</code></p>
+</li>
+<li>
+<p>C : <code>45° 15' 23" N, 5° 01' 43" E</code></p>
+</li>
+<li>
+<p>D : <code>$GPGGA,114535.288,7814.1500,N,01529.4833,E,1,04,3.2,325,M,,,,0000*0E</code></p>
+</li>
+</ul>
+<p>Aidez Alice grâce aux différentes aides ! Les questions se situent après.</p>
+</div>
+<h2 id="latitude-et-longitude">Latitude et Longitude</h2>
+<div class="admonition note">
+<p class="admonition-title">Aide 1 - Latitude et Longitude</p>
+<p>Tout point sur le globe peut être localisé à l'aide d'une grille imaginaire de lignes "verticales" et "horizontales" :</p>
+<p><figure markdown>
+<img alt="Oui" src="../images/longlat2.png" />
+</figure></p>
+<p>Un point se repère relativement à deux cercles :</p>
+<ul>
+<li>
+<p>L'<strong>équateur</strong> qui sépare le pôle Nord du pôle Sud.</p>
+</li>
+<li>
+<p>La <strong>méridien de Greenwich</strong>, qui est le cercle passant les pôles Nord et Sud et l'observatoire de Greenwhich, en Angleterre.</p>
+</li>
+</ul>
+<p><figure markdown>
+<img alt="Oui" src="../images/longlat.png" />
+</figure></p>
+<p>De l'équateur on définit des <strong>parallèles</strong>, et du méridien de Greenwhich, d'autres <strong>méridiens</strong>. Ainsi :</p>
+<ul>
+<li>
+<p>La <strong>latitude</strong> correspond à l'<strong>angle</strong> formé entre l'équateur et la parallèle passant par le point.</p>
+</li>
+<li>
+<p>La <strong>longitude</strong> correspont à l'<strong>angle</strong> formé entre le méridien de référence (ou de Greenwhich) et le méridien passant par le point.</p>
+</li>
+</ul>
+<p><figure markdown>
+<img alt="" src="../images/angles.jpg" />
+</figure></p>
+<ul>
+<li>
+<p>Les latitudes sont notée de -90° à 90°. Les angles négatifs correspondent à l'hémisphère sud, les angles positifs correspondent à l'hémisphère nord.</p>
+</li>
+<li>
+<p>Les longitudes sont notée de -180° à 180°. Les longitudes négatives sont situées à l'ouest de Greenwhich, Les longitudes positives sont situées à l'est de Greenwhich. On peut aussi noter O pour Ouest et E pour Est.</p>
+</li>
+</ul>
+<p>Par convention, la latitude est donnée en premier, la longitude en second.</p>
+</div>
+<h2 id="mesurer-les-angles">Mesurer les angles</h2>
+<div class="admonition note">
+<p class="admonition-title">Aide 2 - Le système sexagésimal</p>
+<p>Le <strong>système sexagésimal</strong> ou <strong>DMS</strong> pour <em>Degrés Minutes Secondes</em> vient des Babyloniens, inventeurs du degré et qui comptaient en base 60. Il permet de noter plus simplement des angles précis et éviter un trop grand nombre de chiffres après la virgule.</p>
+<p>Le système DMS est divisé en trois parties : les degrés (°), les minutes (') et les secondes ("). <strong>Un degré est divisé en 60 minutes, et une minute est divisée en 60 secondes.</strong></p>
+<p>Ce système n'accepte pas les valeurs négatives, ainsi N et S sont ajoutés aux latitudes poud distinguer le Nord du Sud, et O et E sont ajoutés aux longitudes pour distinguer l'Ouest de l'Est.</p>
+<p>Par exemple, la latitude de Paris est <code>48° 51' 12" N</code>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Question 1</p>
+<p>Combien y a-t-il de secondes dans un degré ?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Aide 3 - Le sytème décimal</p>
+<p>Dans le <strong>système décimal</strong>, ou sytème DD (degrés décimaux); les angles sont simplement mesurés en degré, ce que vous aviez l'habitude de faire jusqu'à présent. Dans ce système, les angles négatifs sont autorisés. Par exemple, la latitude de Paris vaut <code>48.853333°</code>.</p>
+<p>Pour arriver à ce résultat, on peut convertir <code>48° 51' 12" N</code> en degrés :</p>
+<div class="arithmatex">\[
+    48 + \frac{51}{60} + \frac{12}{60 \times 60} = 48.853333
+\]</div>
+<p>On se situe bien au nord de l'hémisphère, donc le signe est bien positif.</p>
+</div>
+<h3 id="protocole-nmea">Protocole NMEA</h3>
+<div class="admonition note">
+<p class="admonition-title">Aide 4 - Le Protocole NMEA 0183</p>
+<p>C'est un des protocoles qui régit les communications des récepteurs GPS. Les normes de ce protocole sont définies et contrôlées par la National Marine Electronics Association (NMEA). Une trame de ce protocole se décompose comme suit :</p>
+<p><img alt="" src="../images/nmea3.png" /></p>
+<p>La latitude est au format <code>DDMM.MMMM</code> et la longitude au format <code>DDDMM.MMMM</code>.</p>
+</div>
+<h2 id="questions">Questions</h2>
+<div class="admonition example">
+<p class="admonition-title">Question 2 - Identification</p>
+<p>Identifiez selon quel système ou quel protocole est exprimé pour chacun des quatres sites (A, B, C et D).</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Question 3</p>
+<p>Quels sont les sites situés dans l'hémisphère nord ?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Question 4</p>
+<p>Télécharger la carte et placer approximativement les 4 points avec un logiciel de dessin, comme Paint par exemple :</p>
+<p><img alt="" src="../images/map.jpg" /></p>
+<p>Dans quels pays se trouvent-ils ?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Question 5</p>
+<p>Trouver les lieux cachés derrières les indices, à l'aide de cartes en ligne comme Géoportail, OpenStreeMap, Google Maps etc. Des sites de conversion comme <a href="https://www.coordonnees-gps.fr/conversion-coordonnees-gps">celui-ci</a> peuvent vous aider.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Question 6</p>
+<p>Trouver le nom des villes les plus proches de chaque site à l'aide de cartes en ligne.</p>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

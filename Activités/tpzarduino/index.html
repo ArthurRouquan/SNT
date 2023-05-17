@@ -1,0 +1,1239 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tpweb/">
+      
+      
+        <link rel="next" href="../../Programmation/recap/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+    
+    
+      
+        <title>TP Arduino - Informatique embarquée - SNT</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp-arduino-informatique-embarquee" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="SNT" class="md-header__button md-logo" aria-label="SNT" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SNT
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP Arduino - Informatique embarquée
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SNT" class="md-nav__button md-logo" aria-label="SNT" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SNT
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Activités
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Activités
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp0/" class="md-nav__link">
+        TP Zéro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpgeo/" class="md-nav__link">
+        TP Les coordonnées géographiques
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpgeo2/" class="md-nav__link">
+        TP Les systèmes de positionnement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpgeo3/" class="md-nav__link">
+        TP Les plateformes de cartographie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tpweb/" class="md-nav__link">
+        TP Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP Arduino - Informatique embarquée
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP Arduino - Informatique embarquée
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#presentation-du-materiel-utilise" class="md-nav__link">
+    Présentation du matériel utilisé
+  </a>
+  
+    <nav class="md-nav" aria-label="Présentation du matériel utilisé">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carte-arduino" class="md-nav__link">
+    Carte Arduino
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breadboard" class="md-nav__link">
+    Breadboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clignoter-une-led" class="md-nav__link">
+     Clignoter une LED
+  </a>
+  
+    <nav class="md-nav" aria-label=" Clignoter une LED">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-montage" class="md-nav__link">
+    Le montage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-programme" class="md-nav__link">
+    Le programme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-sos" class="md-nav__link">
+     Message SOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projet" class="md-nav__link">
+    Mini-projet
+  </a>
+  
+    <nav class="md-nav" aria-label="Mini-projet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini-projet-a-un-lampadaire-intelligent" class="md-nav__link">
+     Mini-projet A : Un lampadaire intelligent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-projet-b-radar-de-recul" class="md-nav__link">
+     Mini-Projet B : Radar de recul
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Programmation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Programmation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/recap/" class="md-nav__link">
+        Feuille de Triche
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#presentation-du-materiel-utilise" class="md-nav__link">
+    Présentation du matériel utilisé
+  </a>
+  
+    <nav class="md-nav" aria-label="Présentation du matériel utilisé">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carte-arduino" class="md-nav__link">
+    Carte Arduino
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breadboard" class="md-nav__link">
+    Breadboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clignoter-une-led" class="md-nav__link">
+     Clignoter une LED
+  </a>
+  
+    <nav class="md-nav" aria-label=" Clignoter une LED">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-montage" class="md-nav__link">
+    Le montage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-programme" class="md-nav__link">
+    Le programme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-sos" class="md-nav__link">
+     Message SOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projet" class="md-nav__link">
+    Mini-projet
+  </a>
+  
+    <nav class="md-nav" aria-label="Mini-projet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini-projet-a-un-lampadaire-intelligent" class="md-nav__link">
+     Mini-projet A : Un lampadaire intelligent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-projet-b-radar-de-recul" class="md-nav__link">
+     Mini-Projet B : Radar de recul
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="tp-arduino-informatique-embarquee">TP Arduino - Informatique embarquée</h1>
+<div class="admonition warning">
+<p class="admonition-title">Consignes</p>
+<p>Mettez-vous par binôme ou trinôme suivant le nombre de cartes Arduino disponibles. Il n'y a pas de rapport à réaliser, simplement des démonstrations à me montrer. </p>
+</div>
+<h2 id="presentation-du-materiel-utilise">Présentation du matériel utilisé</h2>
+<h3 id="carte-arduino">Carte Arduino</h3>
+<figure>
+<p><img alt="" src="../images/arduino.png" width="400px" /></p>
+</figure>
+<p>Arduino Uno est une petite <strong>carte électronique programmable</strong> qui permet de contrôler différents composants électroniques tels que des lumières, des moteurs ou des capteurs. Elle est largement utilisée pour l'apprentissage de l'<strong>électronique embarquée</strong> et de la programmation.  </p>
+<h3 id="breadboard">Breadboard</h3>
+<figure>
+<p><img alt="" src="../images/bread.png" width="400px" /></p>
+</figure>
+<p>La <strong>Breadboard</strong> permet de réaliser des circuits électroniques sans soudure, il suffit d'insérer les pattes des composants et les fils dans les trous de celui-ci pour réaliser des branchements.</p>
+<h2 id="clignoter-une-led"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2 5.2-7.1 10.4-14.2 15.4-21.4 19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3 5 7.2 10.2 14.3 15.4 21.4 19.8 27.1 39.7 54.4 49.2 86.2h160zm-80 128c44.2 0 80-35.8 80-80v-16H112v16c0 44.2 35.8 80 80 80zm-80-336c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112 8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg></span> Clignoter une LED</h2>
+<div class="admonition success">
+<p class="admonition-title">Objectif</p>
+<p>Cette section a pour but de vous familiarisez avec le matériel, il s'agira de faire clignoter une LED.</p>
+</div>
+<details class="info">
+<summary>Matériels nécessaires</summary>
+<ul>
+<li>Un PC avec le logiciel Arduino</li>
+<li>Une carte Arduino Uno</li>
+<li>Un câble USB</li>
+<li>Une breadboard</li>
+<li>Une LED rouge</li>
+<li>Une résistance de 220 Ω</li>
+<li>Quelques fils électriques</li>
+</ul>
+</details>
+<h3 id="le-montage">Le montage</h3>
+<ul>
+<li>Réaliser le montage suivant :</li>
+</ul>
+<figure>
+<p><img alt="" src="../images/montage1.png" width="400px" /></p>
+</figure>
+<details class="info">
+<summary>Schéma électrique</summary>
+<p><figure markdown>
+<img alt="" src="../images/circuit1.png" width="200px" />
+</figure markdown></p>
+</details>
+<div class="admonition warning">
+<p class="admonition-title">Attention au sens de la LED</p>
+<p>Une LED est un semi-conducteur qui laisse passer le courant que dans un sens ! La branche la plus longue sur la borne + et la branche la plus courte sur la borne -.</p>
+</div>
+<blockquote>
+<p>Une LED a été simplement connectée à une des sorties de la carte Arduino, ici sur la broche (<em>pin</em> en anglais) 13. La résistance ajoutée permet de limiter le courant dans la LED. On se propose maintenant  de contrôler la LED grâce à un programme.</p>
+</blockquote>
+<h3 id="le-programme">Le programme</h3>
+<ul>
+<li>
+<p>Relier la carte Arduino au PC grâce au câble USB. </p>
+</li>
+<li>
+<p>Exécuter le logiciel <strong>Arduino</strong> sur votre PC.</p>
+</li>
+</ul>
+<blockquote>
+<p>Le logiciel <strong>Arduino</strong> permet d'écrire un programme que l'on envoie ensuite vers la carte Arduino grâce à un câble USB. Une fois le programme envoyé à la carte, il sera exécuté par la carte.</p>
+</blockquote>
+<figure>
+<p><img alt="" src="../images/arduinoide.png" /></p>
+</figure>
+<ul>
+<li>Copier-coller le programme suivant :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// la fonction setup se lance une fois au démarrage du programme</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">//(1)!</span>
+<span class="p">}</span>
+
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// la fonction loop se répète à l&#39;infini</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">//(2)!</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">//(3)!</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="c1">//(4)!</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">//(5)!</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>On déclare la broche 13 sur laquelle la LED est branchée comme une sortie (<em>output</em> en anglais) de la carte Arduino ; on veut y envoyer du courant !</p>
+</li>
+<li>
+<p>On envoie du courant à la broche 13, la LED s'allume. La sortie 13 est dite à l'état « haut » (<em>high</em> en anglais).</p>
+</li>
+<li>
+<p>On attend 1 seconde, la LED reste donc allumée pendant ce temps.</p>
+</li>
+<li>
+<p>On met la sortie de la broche 13 à l'état « bas » (<em>low</em> en anglais), la LED s'éteint.</p>
+</li>
+<li>
+<p>On patiente 1 seconde. Le code dans <code>loop()</code> se répète ensuite, d'où le clignotement.</p>
+</li>
+</ol>
+<div></div>
+
+<ul>
+<li>
+<p>Transférer le programme à la carte en cliquant sur le bouton <img alt="" src="../images/televerser.png" width="20px" />.</p>
+</li>
+<li>
+<p>Si tout fonctionne, la LED devrait se mettre à clignoter.</p>
+</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Modifier le programme pour faire clignoter la LED plus rapidement.</p>
+<p>M'appeler pour une démonstration.</p>
+</div>
+<h2 id="message-sos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15.07 11.25-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 0 0-2-2 2 2 0 0 0-2 2H8a4 4 0 0 1 4-4 4 4 0 0 1 4 4 3.2 3.2 0 0 1-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-5.53-4.5-10-10-10Z"/></svg></span> Message SOS</h2>
+<details class="info">
+<summary>Le code morse</summary>
+<p>Le code morse est un système de communication utilisé pour transmettre des messages en utilisant des signaux sonores ou lumineux. Ce système utilise des combinaisons de points, de traits et d'espaces pour représenter des lettres, des chiffres et des signes de ponctuation.</p>
+<p>Dans le code morse, un point représente une courte durée d'émission de signal, tandis qu'un trait représente une durée plus longue. Les lettres sont formées en combinant des points et des traits dans des séquences spécifiques.</p>
+<p><figure markdown>
+<img alt="" src="../images/morse.png" width="300" />
+</figure markdown></p>
+</details>
+<details class="info">
+<summary>Durées</summary>
+<ul>
+<li>Un <strong>point</strong> <code>.</code> dure 1 unité de temps</li>
+<li>Un <strong>tiret</strong> <code>-</code> dure 3 unités de temps </li>
+<li>La durée entre deux symboles (<code>.</code> ou <code>-</code>) d'une même lettre est d'1 unité de temps</li>
+<li>La durée entre les lettres est de 3 unités de temps</li>
+<li>La durée entre les mots est de 7 unités de temps</li>
+</ul>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Sans modifier le montage électronique précédent, adapter le programme précédent afin de faire clignoter la LED pour afficher le message « SOS » en code morse.</p>
+<p>M'appeler pour une démonstration.</p>
+<p>Ce n'est pas obligatoire, mais pour rendre la tâche moins pénible, vous pouvez vous aider des quelques techniques présentées ci-dessous. </p>
+</div>
+<details class="note">
+<summary>Quelques techniques</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Définir l'unité de temps</label><label for="__tabbed_1_2">Définir la broche de la LED</label><label for="__tabbed_1_3">Définir une fonction</label><label for="__tabbed_1_4">Un début de programme</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On peut définir des <strong>constantes</strong> au préalable dans notre programme :</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define UNITE_TEMPS 200 </span><span class="c1">//(1)!</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="n">UNITE_TEMPS</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">//(2)!</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>On définit une <strong>constante</strong> <code>UNITE_TEMPS</code> qui vaut 200. On pourra la modifier si besoin.</p>
+</li>
+<li>
+<p>On réutilise la constante <code>UNITE_TEMPS</code> pour attendre 3 unités de temps, soit 200 × 3 = 600 ms.</p>
+</li>
+</ol>
+<p>Ainsi il sera très facile de modifier <code>UNITE_TEMPS</code> pour accélérer ou ralentir le clignotement de la LED.</p>
+</div>
+<div class="tabbed-block">
+<p>Un autre exemple de constante utile :</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define LED 13 </span><span class="c1">//(1)!</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>De la même manière, on peut définir la broche où est connectée la LED pour plus de clarté. Ici, la constante <code>LED</code> vaut 13.</li>
+</ol>
+<p>Ceci est très utile lorsque de multiples composants sont connectés à la carte (plusieurs LEDs, un buzzer etc.).</p>
+</div>
+<div class="tabbed-block">
+<p>Pour éviter de répéter du code, on utilise une <strong>fonction</strong> :</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ma_super_fonction</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// ma_super_fonction est exécutée 3 fois !</span>
+<span class="w">    </span><span class="n">ma_super_fonction</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ma_super_fonction</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ma_super_fonction</span><span class="p">();</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Ainsi, pour répondre à la question, une manière de faire serait de réaliser deux fonctions <code>point</code> et <code>tiret</code> et de les appeler dans la fonction principale <code>loop</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define UNITE_TEMPS 200</span>
+<span class="cp">#define LED 13</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">point</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// à compléter</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">tiret</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// à compléter</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// à compléter</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// à compléter</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h2 id="mini-projet">Mini-projet</h2>
+<div class="admonition warning">
+<p class="admonition-title">Consignes</p>
+<p>Choisir un des mini-projets A ou B. Le projet A me semble plus abordable.</p>
+</div>
+<h3 id="mini-projet-a-un-lampadaire-intelligent"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2C5.13 2 2 5.13 2 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7M6 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H6v1m13-8h-2l-3.2 9h1.9l.7-2h3.2l.7 2h1.9L19 13m-2.15 5.65L18 15l1.15 3.65h-2.3Z"/></svg></span> Mini-projet A : Un lampadaire intelligent</h3>
+<div class="admonition success">
+<p class="admonition-title">Objectif</p>
+<p>Quand la nuit tombe, la plupart des lampadaires s'allument automatiquement. Pour détecter la baisse de luminosité, ce genre de lampadaire est doté d'un <strong>capteur photosensible</strong>, c'est-à-dire sensible à la lumière. Le but de ce projet est de réaliser un tel lampadaire.</p>
+</div>
+<details class="note">
+<summary>Une photorésistance</summary>
+<p><figure markdown>
+<img alt="" src="../images/photo.png" width="200px" />
+</figure markdown></p>
+<p>Une <strong>photorésistance</strong> est un composant électronique dont la résistance électrique diminue lorsqu'il est exposé à la lumière. Dans ce projet, la carte Arduino lira plutôt <strong>la tension</strong> aux bornes de ce capteur car elle est proportionnelle à sa résistance (loi d'Ohm).</p>
+<blockquote>
+<p>En résumé, mesurer la tension aux bornes de ce capteur photosensible mesure la quantité de lumière qu'il reçoit.</p>
+</blockquote>
+<p>Un tel signal est dit <strong>analogique</strong> car il varie de manière continue dans le temps. Les valeurs de ce signal seront ensuite converties en des valeurs numériques que vous manipulerez dans le programme.</p>
+</details>
+<details class="info">
+<summary>Matériels nécessaires</summary>
+<ul>
+<li>Un PC avec le logiciel Arduino</li>
+<li>Une carte Arduino Uno</li>
+<li>Un câble USB</li>
+<li>Une breadboard</li>
+<li>1 × LED rouge</li>
+<li>1 × résistance de 220 Ω</li>
+<li>1 × résistance de 10 kΩ </li>
+<li>1 × photorésistance</li>
+<li>Quelques fils électriques</li>
+</ul>
+</details>
+<details class="question">
+<summary>Démarche</summary>
+<ul>
+<li>
+<p>Réaliser le circuit suivant :</p>
+<p><figure markdown>
+<img alt="" src="../images/montage2_init.png" width="400px" />
+</figure markdown></p>
+<details class="info">
+<summary>Schéma électrique</summary>
+<p><figure markdown>
+<img alt="" src="../images/circuit2.png" width="200px" />
+</figure markdown></p>
+</details>
+</li>
+<li>
+<p>Téléverser ce code à la carte Arduino :</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define PHOTORESISTANCE A0 </span><span class="c1">//(1)!</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"> </span><span class="c1">//(2)!</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PHOTORESISTANCE</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">//(3)!</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">PHOTORESISTANCE</span><span class="p">);</span><span class="w"> </span><span class="c1">//(4)!</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">valeur</span><span class="p">);</span><span class="w"> </span><span class="c1">//(5)!</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Définit la broche sur laquelle est connectée la photorésistance (ici, la broche analogique A0)</p>
+</li>
+<li>
+<p>Initialise la communication avec le PC. 9600 bauds correspond au nombre de symboles transmissibles par seconde.</p>
+</li>
+<li>
+<p>Initialise la broche A0 comme une entrée (<em>input</em> en anglais).</p>
+</li>
+<li>
+<p>Mesure la tension sur la broche A1, le résultat est stocké dans une variable <code>valeur</code> de type entier <code>int</code>.</p>
+</li>
+<li>
+<p>On affiche la valeur sur le PC.</p>
+</li>
+</ol>
+<p><div></div></p>
+</li>
+<li>
+<p>Dans le logiciel Arduino, ouvrir le moniteur série <code>Outils ▶ Moniteur série</code> pour afficher les messages qu'envoie la carte Arduino au PC.</p>
+</li>
+<li>
+<p>Noter les valeurs affichées sur le moniteur lorsque :</p>
+<ul>
+<li>le capteur n'est pas couvert</li>
+<li>le capteur est couvert (avec un doigt par exemple)</li>
+<li>qu'une source lumineuse est proche du capteur (le flash de d'un téléphone par exemple)</li>
+</ul>
+</li>
+<li>
+<p>Ajouter une LED à votre circuit comme lors de la première section (n'oubliez pas la résistance !).</p>
+</li>
+<li>
+<p>Modifier le programme suivant pour allumer la lumière quand la photorésistance détecte la nuit :</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define PHOTORESISTANCE A0</span>
+<span class="cp">#define LED ❓</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PHOTORESISTANCE</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="err">❓</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">PHOTORESISTANCE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">valeur</span><span class="p">);</span><span class="w"> </span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">valeur</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="err">❓</span><span class="p">)</span><span class="w"> </span><span class="c1">// si...</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">       </span><span class="err">❓</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="c1">// sinon</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">       </span><span class="err">❓</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>M'appeler pour une démonstration.</p>
+</li>
+</ul>
+</details>
+<h3 id="mini-projet-b-radar-de-recul"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 6V4h.1C12.9 4 20 11.1 20 19.9v.1h-2v-.1C18 12.2 11.8 6 4 6m0 4V8a12 12 0 0 1 12 12h-2A10 10 0 0 0 4 10m0 4v-2a8 8 0 0 1 8 8h-2a6 6 0 0 0-6-6m0 2a4 4 0 0 1 4 4H4v-4Z"/></svg></span> Mini-Projet B : Radar de recul</h3>
+<div class="admonition success">
+<p class="admonition-title">Objectif</p>
+<p>Les voitures modernes sont dotées d'un radar de recul permettant d'aider le conducteur à détecter des obstacles proches lorsqu'il est en marche arrière. Un tel radar est doté d'un <strong>capteur de distance</strong>. Le but de ce projet est de réaliser un tel radar de recul.</p>
+</div>
+<details class="note">
+<summary>Capteur de distance à ultrasons</summary>
+<p><figure markdown>
+<img alt="" src="../images/ultrasound.png" width="200px" />
+</figure markdown></p>
+<p>Un capteur de distance à ultrasons envoie une petite onde acoustique ultrasonique (40 kHz) et reçoit l'écho de cette onde plus tard. La durée <span class="arithmatex">\(\Delta T\)</span> entre l'émission de l'onde et la réception de son écho permet de calculer la distance car la vitesse <span class="arithmatex">\(v\)</span> du son dans l'air est connue :</p>
+<div class="arithmatex">\[2d = v \cdot \Delta T\]</div>
+<p>Le coefficient <span class="arithmatex">\(2\)</span> vient du fait que l'onde acoustique parcourt deux fois la distance (aller-retour) entre l'émetteur et l'objet visé.</p>
+</details>
+<details class="info">
+<summary>Matériels nécessaires</summary>
+<ul>
+<li>Un PC avec le logiciel Arduino</li>
+<li>Une carte Arduino Uno</li>
+<li>Un câble USB</li>
+<li>Une carte BaseShield</li>
+<li>Un capteur de distance à ultrasons</li>
+<li>Au choix :<ul>
+<li>5 × LED rouge et 5 × résistance de 220 Ω</li>
+<li>Un buzzer</li>
+</ul>
+</li>
+<li>Quelques fils électriques</li>
+</ul>
+</details>
+<details class="question">
+<summary>Démarche</summary>
+<ul>
+<li>Connecter le BaseShield à la carte Arduino. Y relier le capteur de distance à ultrasons sur des bornes, par exemple la borne 7.</li>
+</ul>
+<blockquote>
+<p>Pour utiliser le capteur, il est nécessaire d'utiliser une bibliothèque spécifique qui contient toutes les fonctions utiles. Par exemple la fonction <code>MeasureInCentimeters</code> permettra de renvoyer la distance mesurée par le capteur, sans se soucier de l'implémentation concrète.</p>
+</blockquote>
+<ul>
+<li>Télécharger la bibliothèque du capteur ultrason <a href="../images/CapteurUltrason.zip">CapteurUltrason.zip</a>. Dans le logiciel Arduino, inclure la bibliothèque en allant dans <code>Croquis ▶ Inclure une bibliothèque ▶ Ajouter la bibliothèque .ZIP...</code> et sélectionner le fichier précédemment téléchargé.</li>
+</ul>
+<p><figure markdown>
+<img alt="" src="../images/biblio.png" width="600px" />
+</figure markdown></p>
+<ul>
+<li>
+<p>Copier et téléverser le programme suivant :</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Ultrasonic.h&quot;</span><span class="c1"> //(1)!</span>
+
+<span class="n">Ultrasonic</span><span class="w"> </span><span class="nf">ultrasonic</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="w"> </span><span class="c1">//(2)!</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"> </span><span class="c1">//(3)!</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ultrasonic</span><span class="p">.</span><span class="n">MeasureInCentimeters</span><span class="p">();</span><span class="w"> </span><span class="c1">//(4)!</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;La distance à l&#39;obstacle devant est : &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">distance</span><span class="p">);</span><span class="w"> </span><span class="c1">//(5)!</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; cm&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span><span class="w"> </span><span class="c1">//(6)!</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>On inclut la bibliothèque <code>Ultrasonic</code> qui contient les fonctions utiles pour le capteur de distance à ultrasons.</p>
+</li>
+<li>
+<p>On spécifie la borne où l'on a attaché le capteur sur le BaseShield.</p>
+</li>
+<li>
+<p>Initialise la communication avec le PC. 9600 bauds correspond au nombre de symboles transmissibles par seconde.</p>
+</li>
+<li>
+<p><code>MeasureInCentimeters</code> renvoie la distance à l'obstacle en centimètres, le résultat est stocké dans une variable <code>distance</code> de type <code>long</code> (un « grand » entier).</p>
+</li>
+<li>
+<p>On affiche la valeur sur le PC.</p>
+</li>
+<li>
+<p>Deux mesures doivent être espacées dans le temps !</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Dans le logiciel Arduino, ouvrir le moniteur série <code>Outils ▶ Moniteur série</code> pour afficher les messages qu'envoie la carte Arduino au PC. Vérifier bien que tout fonctionne.</p>
+</li>
+<li>
+<p>On souhaite maintenant aider le conducteur avec une aide sonore ou visuelle. Vous êtes libre de réaliser au choix :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Aide visuelle</label><label for="__tabbed_2_2">Aide sonore</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Une <strong>chaîne de 5 LEDs</strong> qui s'allument inversement proportionnellement à la distance mesurée. Une chaîne de 5 LEDs allumées signifie que la voiture est proche de l'obstacle, une chaîne de 0 LED allumée signifie que la voiture est loin de l'obstacle.</p>
+<p>Pour démarrer, il est nécessaire de connecter 5 LEDs à 5 broches numériques de la carte Arduino (utiliser 5 résistances de 220Ω). Puis ensuite d'allumer et d'éteindre ces LEDs en fonction de la distance mesurée par le capteur grâce à une structure conditionnelle :</p>
+<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">ultrasonic</span><span class="p">.</span><span class="n">MeasureInCentimeters</span><span class="p">();</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="c1">// si...</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="c1">// code à exécuter si distance &lt; 5cm</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="c1">// sinon si la distance &lt; 10cm</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="c1">// code à exécuter si 5cm &lt; distance &lt; 10cm</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="c1">// sinon si la distance &lt; 20cm</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="c1">// code à exécuter si 10cm &lt; distance &lt; 20cm</span>
+<span class="p">}</span>
+<span class="c1">// etc.</span>
+<span class="k">else</span><span class="w"> </span><span class="c1">// sinon (dernier cas) </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// code à exécuter par défaut</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Un <strong>buzzer</strong> qui sonne à une fréquence inversement proportionnelle à la distance mesurée. Plus la voiture est proche de l'obstacle, plus le buzzer sonne rapidement. </p>
+<p>Commencer par connecter le buzzer à la broche numérique 11 de la carte Arduino par exemple. Téléverser ensuite ce code pour vérifier que tout fonctionne :</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define BUZZER 11 </span><span class="c1">//(1)!</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">//(2)!</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">tone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span><span class="w"> </span><span class="mi">523</span><span class="p">);</span><span class="w"> </span><span class="c1">//(3)!</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span><span class="w"> </span><span class="mi">659</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">    </span><span class="n">noTone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">);</span><span class="w"> </span><span class="c1">//(4)!</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>On définit la broche où est connectée le buzzer.</p>
+</li>
+<li>
+<p>On déclare la broche où est connectée le buzzer comme une sortie.</p>
+</li>
+<li>
+<p>On fait sonner le buzzer à une fréquence de 523 Hz, soit un Do.</p>
+</li>
+<li>
+<p>On arrête de faire sonner le buzzer.</p>
+</li>
+</ol>
+<p>Il faudra adapter ensuite la structure conditionnelle <code>if</code> <code>else if</code> <code>else</code> vue précédemment : soit on rallonge le délai plus la distance est grande, soit on augmente la fréquence quand on se rapproche.</p>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>M'appeler pour une démonstration.</p>
+</li>
+</ul>
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
